@@ -9,7 +9,7 @@
     <title>Vibes</title>
 </head>
 <body>
-    <header class="small_padding">
+    <header class="small_padding" id="page_header">
         <div id="logo_container">
             <img src="assets/logo.png" alt="logo_Vibes" id="logo">
         </div>
@@ -35,8 +35,8 @@
             <div id="credentials_container">
                 <div>
                     <h2>why choose us?</h2>
-                    <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet.</p>
-                    <p class="small">Nam quam runc blandit, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae <span>sapien ut libero.</span></p>
+                    <p class="larger">Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet.</p>
+                    <p>Nam quam runc blandit, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae <span class="pink">sapien ut libero.</span></p>
                 </div>
                 <div>
                     <h2>what you get?</h2>
@@ -64,68 +64,52 @@
                 </div>
                 <div>
                     <div class="leaflet">
-                        <div class="reducer">
-                            <i class="icons fa-solid fa-minus"></i>
-                        </div>
-                        <div>
-                            <h5>nulla consequat massa</h5>
+                        <button class="accordion">nulla consequat massa</button>
+                        </button>
+                        <div class="panel">
                             <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo</p>
                         </div>
                     </div>
                     <div class="leaflet">
-                        <div class="reducer">
-                            <i class="icons fa-solid fa-plus"></i>
-                        </div>
-                        <div>
-                            <h5>vivamis elementum semper</h5>
-                            <p></p>
+                        <button class="accordion">vivamis elementum semper</button>
+                        <div class="panel">   
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa dicta perferendis provident doloribus esse iure?</p>
                         </div>
                     </div>
                     <div class="leaflet">
-                        <div class="reducer">
-                            <i class="icons fa-solid fa-plus"></i>
-                        </div>
-                        <div>
-                            <h5>etiam ultricies nisi vel</h5>
-                            <p></p>
+                        <button class="accordion">etiam ultricies nisi vel</button>
+                        <div class="panel">     
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed delectus corporis libero nam dolorem numquam.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <section id="portfolio">
-            <div id="galery">
+            <div id="gallery">
                 <div class="gallery_img_container">
-                    <img src="" alt="">
-                    <img src="" alt="">
+                    <img src="assets/gorillaz1.png" alt="">
                 </div>
                 <div class="gallery_img_container">
-                    <img src="" alt="">
-                    <img src="" alt="">
+                    <img src="assets/gorillaz2.png" alt="">
                 </div>
                 <div class="gallery_img_container">
-                    <img src="" alt="">
-                    <img src="" alt="">
+                    <img src="assets/gorillaz3.png" alt="">
                 </div>
                 <div class="gallery_img_container">
-                    <img src="" alt="">
-                    <img src="" alt="">
+                    <img src="assets/gorillaz4.png" alt="">
                 </div>
                 <div class="gallery_img_container">
-                    <img src="" alt="">
-                    <img src="" alt="">
+                    <img src="assets/gorillaz3.png" alt="">
                 </div>
                 <div class="gallery_img_container">
-                    <img src="" alt="">
-                    <img src="" alt="">
+                    <img src="assets/gorillaz4.png" alt="">
                 </div>
                 <div class="gallery_img_container">
-                    <img src="" alt="">
-                    <img src="" alt="">
+                    <img src="assets/gorillaz1.png" alt="">
                 </div>
                 <div class="gallery_img_container">
-                    <img src="" alt="">
-                    <img src="" alt="">
+                    <img src="assets/gorillaz2.png" alt="">
                 </div>
             </div>
             <div class="small_padding" id="gallery_actions">
@@ -139,47 +123,56 @@
             </div>
         </section>
         <section class="small_padding" id="testimonials">
-            <h1>client testimonials</h1>
-            <div id="dash">
-                <i class="fa-light fa-dash"></i>
-            </div>
+            <header class="section_header">
+                <h1>client testimonials</h1>
+                <div class="dash"></div>
+            </header>
             <div id="testimonials_container">
-                <div>
-                    <p>Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget.</p>
-                    <span>Tommy Mars, Designer</span>
+                <div class="testimonial">
+                    <img class="profile" src="assets/profile_icon_1.png">
+                    <div>
+                        <p class="x_large italic">Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget.</p>
+                        <p class="small"><strong>Tommy Mars</strong>, Designer</p>
+                    </div>
                 </div>
-                <div>
-                    <p>Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.</p>
-                    <span>Floor Simons, Designer</span>
+                <div class="testimonial" id="mid">
+                    <div>
+                        <p class="x_large text_right italic">Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.</p>
+                        <p class="small text_right"><strong>Floor Simons</strong>, Designer</p>
+                    </div>
+                    <img class="profile" src="assets/profile_icon_2.png">
                 </div>
-                <div>
-                    <p>Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget.</p>
-                    <span>Mick Neil, Rock Star</span>
+                <div class="testimonial">
+                    <img class="profile" src="assets/profile_icon_3.png">
+                    <div>
+                        <p class="x_large italic">Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget.</p>
+                        <p class="small"><strong>Mick Neil</strong>, Rock Star</p>
+                    </div>
                 </div>
             </div>
             <button>become our client</button>
         </section>
         <section class="large_padding" id="commercial">
-            <h1>new horizons await</h1>
-            <div id="dash">
-                <i class="fa-light fa-dash"></i>
-            </div>
+            <header class="section_header">
+                <h1>new horizons await</h1>
+                <div class="dash"></div>
+            </header>
             <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life. One day however a small line of blind text by the name of Lorem Ipsum decided</p>
             <button>buy vibes on themeforest</button>
         </section>
         <section class="small_padding" id="contact">
-            <h1>get in touch</h1>
-            <div id="dash">
-                <i class="fa-light fa-dash"></i>
-            </div>
+            <header class="section_header">
+                <h1>get in touch</h1>
+                <div class="dash"></div>
+            </header>
             <form action="submit">
                 <div class="form_column">
                     <div class="form">
-                        <label for="">your name</label>
+                        <label for="" class="required">your name</label>
                         <input type="text">
                     </div>
                     <div class="form">
-                        <label for="">your email</label>
+                        <label for="" class="required">your email</label>
                         <input type="text">
                     </div>
                     <div class="form">
@@ -193,7 +186,7 @@
                         <input type="text">
                     </div>
                     <div class="form">
-                        <label for="">message</label>
+                        <label for="" class="required">message</label>
                         <textarea name="" id="" cols="30" rows="10"></textarea>
                     </div>
                     <button type="submit">send</button>
@@ -201,18 +194,18 @@
             </form>
         </section>     
     </main>
-    <footer class="small_padding">
+    <footer>
         <section class="small_padding" id="about_us">
             <article>
                 <h5>about vibes</h5>
-                <i>____</i>
-                <p>VIBES is an ideal theme for creative folks or design agencies. Ease of use and top-notech web design techniques are wrapped with several gorgeous color schemes</p>
-                <p>You can buy this responsive Wordpress theme on ThemeForest</p>
+                <div class="small_dash"></div>
+                <p>VIBES is an ideal theme for creative folks or design agencies. <strong>Ease of use and top-notech web design techniques</strong> are wrapped with several gorgeous color schemes</p>
+                <p>You can buy this responsive Wordpress theme on <span class="pink">ThemeForest</span></p>
             </article>
             <article>
                 <h5>newsletter</h5>
-                <i>____</i>
-                <p>VIBES contains fully working Mailchimp subscribe form.</p>
+                <div class="small_dash"></div>
+                <p><strong>VIBES</strong> contains fully working <strong>Mailchimp</strong> subscribe form.</p>
                 <form>
                     <input type="email" placeholder="Your Email Adress">
                     <button action="submitt">subscribe</button>
@@ -220,11 +213,11 @@
             </article>
             <article>
                 <h5>twitter feed</h5>
-                <i>____</i>
-        
+                <div class="small_dash"></div>
+                <p>&#9724&#9724&#9724&#9724&#9632</p>
             </article>
         </section>
-        <nav id="footer_nav">
+        <nav class="small_padding" id="footer_nav">
             <a>Buy this theme on ThemeForest.net</a>
             <div>
                 <a href="">Home</a>
@@ -235,3 +228,21 @@
     </footer>
 </body>
 </html>
+
+<script>
+    var accordions = document.querySelectorAll(".accordion");
+    accordions.forEach(element => element.addEventListener("click", function() {
+        /* Toggle between adding and removing the "active" class,
+        to highlight the button that controls the panel */
+        this.classList.toggle("active");
+
+        /* Toggle between hiding and showing the active panel */
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+        panel.style.display = "none";
+        } else {
+        panel.style.display = "block";
+        }
+    })
+    )
+</script>
