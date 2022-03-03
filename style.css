@@ -1,0 +1,295 @@
+*{
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    padding: 0.5em 1em;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: fit-content;
+}
+
+section, div {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.small_padding {
+    padding: 2em 6em;
+}
+
+.large_padding {
+    padding: 3em 13em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.large_padding p {
+    text-align: center;
+}
+
+body {
+    max-width: 1024px;
+    margin: auto;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+
+/* ------------------------ */
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#logo {
+    height:5em;
+}
+
+nav {
+    flex: 6;
+}
+
+nav>ul{
+    display:flex;
+    justify-content: space-evenly;
+    list-style: none;
+    text-decoration: none;
+}
+
+nav>ul>li {
+    display:flex;
+    align-items: center;
+}
+
+nav>ul>li>a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+}
+ nav>ul>li>i {
+    padding: 0.5em;
+    color: white;
+    border: 1px solid white;
+ }
+
+h1{
+    text-transform: uppercase;
+    text-align: center;
+}
+h2{
+    text-transform: capitalize;
+}
+h5{
+    text-transform: uppercase;
+    margin: 0.2em 0.2em;
+}
+
+/* ------------------------ */
+
+#home {
+    height:20em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#home>p {
+    text-align: center;
+}
+
+#home>button {
+    color: white;
+    border-color: white;
+}
+
+/* ------------------------ */
+
+#credentials_container {
+    margin: 2em 5em;
+    display: flex;
+}
+
+#credentials_container>div {
+    flex:1;
+}
+
+.leaflet {
+    display: flex;
+    border: 1px solid lightslategray;
+}
+
+.icons_and_text_containers {
+ display: flex;
+}
+
+.icons {
+    font-size: 1.8em;
+    margin-right: 0.2em;
+    color: deeppink;
+}
+
+.no_margin_top {
+    margin-top: 0;
+}
+
+/* ------------------------ */
+
+#galery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.gallery_img_container{
+    height: 10em;
+}
+
+#gallery_actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+#gallery_filter button {
+    border: none;
+    color: lightgrey;
+}
+
+#gallery_actions>button {
+    border-color: deeppink;
+    color: deeppink;
+}
+
+/* ------------------------ */
+
+#testimonials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#dash {
+    width: 4em;
+}
+
+#dash>i {
+    color: blueviolet;
+
+}
+
+#testimonials_container div{
+    margin-bottom: 2em;
+}
+
+#testimonials>button {
+    border-color: deeppink;
+    color: deeppink;
+}
+
+/* ------------------------ */
+
+#commercial {
+    color: white;
+}
+
+#commercial>button {
+    border-color: deeppink;
+    color: white;
+}
+
+/* ------------------------ */
+
+#contact form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+
+.form_column{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.form {
+    display:flex;
+    flex-direction: column;
+}
+
+textarea {
+    height: 6em;
+}
+
+label {
+    text-transform: uppercase;
+}
+
+.form_column button {
+    border-color: deeppink;
+    background-color: deeppink;
+    color: white;
+}
+
+/* ------------------------ */
+
+footer {
+    font-size: smaller;
+}
+
+#about_us {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    color: white;
+}
+
+article form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+article form input {
+    font-style: italic;
+    height: 2.5em;
+    padding-inline-start: 1em;
+    background-color: lightslategrey;
+}
+
+article form button {
+    background-color: transparent;
+    border-color: deeppink;
+    color: white;
+}
+
+::placeholder {
+    margin: 0.3em;
+    color: white;
+}
+
+/* ------------------------ */
+
+#footer_nav {
+    margin: 1em 0;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+#footer_nav div {
+    display: flex;
+    gap: 1em;
+}
+
+#footer_nav div a {
+    color: white;
+}
