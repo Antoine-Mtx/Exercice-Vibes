@@ -60,9 +60,22 @@ main {
     background-color: white;
 }
 
+h1{
+    text-transform: uppercase;
+    text-align: center;
+}
+h2{
+    text-transform: capitalize;
+}
+h5{
+    text-transform: uppercase;
+    margin: 1em 0.2em 0 0;
+}
+
 /* ------------------------ */
 
 #page_header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -99,17 +112,38 @@ nav>ul>li>a {
     border: 1px solid white;
  }
 
-h1{
-    text-transform: uppercase;
-    text-align: center;
+#burger_menu:hover {
+    cursor: pointer;
+    background-color: #EEEEEE;
+  }
+
+#burger_menu {
+    padding: 0.5em;
+    color: white;
+    border: 1px solid white;
+    font-size: large;
 }
-h2{
-    text-transform: capitalize;
+
+#nav {
+    padding: 0 1em;
+    display: none;
+    overflow: hidden;
 }
-h5{
-    text-transform: uppercase;
-    margin: 1em 0.2em 0 0;
-}
+
+#nav {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translateY(100%);
+    width: 14em;
+    z-index: 1;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+  }
+
+  #nav ul {
+    
+    flex-direction: column;
+  }
 
 /* ------------------------ */
 
@@ -184,15 +218,15 @@ h5{
 }
 
 .accordion:before{
-    content: '\002B'; /* Unicode character for "plus" sign (+) */
+    content: '\002B'; /* Unicode character for "+" */
     font-size: 2em;
     color: deeppink;
     float: left;
     margin-right: 0.5em;
   }
   
-  .active:before {
-    content: "\2212"; /* Unicode character for "minus" sign (-) */
+.accordion.active:before {
+    content: "\2212"; /* Unicode character for "-" */
   }
 
 .no_margin_top {

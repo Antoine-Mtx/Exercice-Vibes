@@ -13,17 +13,17 @@
         <div id="logo_container">
             <img src="assets/logo.png" alt="logo_Vibes" id="logo">
         </div>
-        <nav>
+        <nav id="nav">
             <ul>
-                <li><a href="">home</a></li>
-                <li><a href="">about</a></li>
-                <li><a href="">portfolio</a></li>
-                <li><a href="">testimonials</a></li>
-                <li><a href="">contact</a></li>
-                <li><a href="">pages</a></li>
-                <li><i class="fa-solid fa-bars"></i></li>
+                <li><a href="#">home</a></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">portfolio</a></li>
+                <li><a href="#">testimonials</a></li>
+                <li><a href="#">contact</a></li>
+                <li><a href="#">pages</a></li>
             </ul>
         </nav>
+        <button id="burger_menu"><i class="fa-solid fa-bars"></i></button>
     </header>
     <main>
         <section class="large_padding" id="home">
@@ -230,19 +230,39 @@
 </html>
 
 <script>
-    var accordions = document.querySelectorAll(".accordion");
-    accordions.forEach(element => element.addEventListener("click", function() {
+
+    // burger menu
+    
+    var _burger_menu = document.querySelector("#burger_menu");
+    _burger_menu.addEventListener("click", function() {
         /* Toggle between adding and removing the "active" class,
         to highlight the button that controls the panel */
-        this.classList.toggle("active");
+        this.classList.toggle("active")
 
-        /* Toggle between hiding and showing the active panel */
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-        panel.style.display = "none";
-        } else {
-        panel.style.display = "block";
-        }
+        var _nav = this.previousElementSibling
+        toggleDisplay(_nav)
+    })
+
+    // accordions
+    
+    var _accordionsList = document.querySelectorAll(".accordion");
+    _accordionsList.forEach(element => element.addEventListener("click", function() {
+        /* Toggle between adding and removing the "active" class,
+        to highlight the button that controls the panel */
+        this.classList.toggle("active")
+
+        var _panel = this.nextElementSibling
+        toggleDisplay(_panel)
     })
     )
+    
+    /* function to toggle between hiding and showing an element */
+    function toggleDisplay(element) {
+        if (element.style.display === "block") {
+            element.style.display = "none"
+        } else {
+            element.style.display = "block"
+        }
+    }
+
 </script>
