@@ -65,7 +65,7 @@
                 <div>
                     <div class="leaflet">
                         <button class="accordion active">nulla consequat massa</button>
-                        <div class="panel">
+                        <div class="panel active">
                             <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo</p>
                         </div>
                     </div>
@@ -245,14 +245,18 @@
     let _accordionsList = document.querySelectorAll(".accordion")
     _accordionsList.forEach(element => element.addEventListener("click", function() {
         let _accordion_active = document.querySelector(".accordion.active")
+
         console.log(_accordion_active)
+
         let _panelDeployed = _accordion_active.nextElementSibling
         _accordion_active.classList.toggle("active")
-        toggleDisplay(_panelDeployed)
+        _panelDeployed.classList.toggle("active")
         
         this.classList.toggle("active")
         let _panel = this.nextElementSibling
-        toggleDisplay(_panel)
+        _panel.classList.toggle("active")
+
+        console.log(_accordion_active)
     }))
 
     // gallery filter
