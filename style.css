@@ -85,13 +85,15 @@ h5{
     height:5em;
 }
 
-nav {
+/* nav {
     flex: 6;
-}
+} */
 
 nav>ul{
+    padding: 0;
     display:flex;
-    justify-content: space-evenly;
+    align-items: center;
+    gap: 1em;
     list-style: none;
     text-decoration: none;
 }
@@ -130,20 +132,7 @@ nav>ul>li>a {
     overflow: hidden;
 }
 
-#nav {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    transform: translateY(100%);
-    width: 14em;
-    z-index: 1;
-    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
-  }
 
-  #nav ul {
-    
-    flex-direction: column;
-  }
 
 /* ------------------------ */
 
@@ -190,7 +179,7 @@ nav>ul>li>a {
 .icons {
     font-size: 1.7em;
     margin-right: 0.5em;
-    margin-bottom: 0.5em;;
+    margin-bottom: 0.5em;
     color: deeppink;
 }
 
@@ -253,10 +242,20 @@ nav>ul>li>a {
     align-items: center;
 }
 
-#gallery_filter button {
+.filter_button {
     border: none;
     color: lightgrey;
 }
+
+/* Add a light grey background on mouse-over */
+.filter_button:hover {
+    color: gray;
+  }
+  
+  /* Add a dark background to the active button */
+.filter_button.active {
+    color: deeppink;
+  }
 
 #gallery_actions>button {
     border-color: deeppink;
@@ -270,7 +269,7 @@ nav>ul>li>a {
     flex-direction: column;
     align-items: center;
     border: 1px solid lightgray;
-    padding: 2em 5em;
+    /* padding: 2em 5em; */
 }
 
 .section_header {
@@ -401,7 +400,7 @@ footer p, footer a {
 }
 
 #about_us {
-    padding: 3em 6em;;
+    /* padding: 3em 6em; */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2em;
@@ -411,7 +410,7 @@ footer p, footer a {
 
 .small_dash {
     width: 2em;
-    margin-top: 0.5em;;
+    margin-top: 0.5em;
     border-top: 3px solid deeppink;
 }
 
@@ -455,4 +454,81 @@ article form button {
 
 #footer_nav div a {
     color: white;
+}
+
+@media (max-width: 860px) {
+    #nav {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translateY(100%);
+    width: 100%;
+    height: fit-content;
+    z-index: 1;
+    background-color: gray;
+    }
+    #nav ul {
+        flex-direction: column;     
+    }
+
+    li>a{
+        color: black;
+    }
+    .large_padding {
+        padding: 3em 3em;
+    }
+    .small_padding {
+        padding: 1em 1em;
+    }
+    .x_large {
+        font-size: large;
+    }
+}
+
+@media (max-width: 640px) {
+    #credentials_container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1em;
+    }
+    #gallery {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        overflow: hidden;
+    }
+
+    .gallery_img_container:nth-child(n+7) {
+        display: none;
+    }
+    /* #about_us {
+        grid-template-columns: 1fr;
+    } */
+}
+
+@media (max-width: 500px) {
+    #nav {
+        width: 100%;
+    }
+    #credentials_container {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    #gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        
+        overflow: hidden;
+    }
+
+
+    #contact form {
+        grid-template-columns: 1fr;
+
+    }    
+    #about_us {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery_img_container:nth-child(n+5) {
+        display: none;
+    }
 }

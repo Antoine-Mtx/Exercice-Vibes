@@ -87,37 +87,37 @@
         </section>
         <section id="portfolio">
             <div id="gallery">
-                <div class="gallery_img_container">
+                <div class="gallery_img_container" class="filterDiv audio">
                     <img src="assets/gorillaz1.png" alt="">
                 </div>
-                <div class="gallery_img_container">
+                <div class="gallery_img_container" class="filterDiv video">
                     <img src="assets/gorillaz2.png" alt="">
                 </div>
-                <div class="gallery_img_container">
+                <div class="gallery_img_container" class="filterDiv image">
                     <img src="assets/gorillaz3.png" alt="">
                 </div>
-                <div class="gallery_img_container">
+                <div class="gallery_img_container" class="filterDiv audio">
                     <img src="assets/gorillaz4.png" alt="">
                 </div>
-                <div class="gallery_img_container">
+                <div class="gallery_img_container" class="filterDiv audio">
                     <img src="assets/gorillaz3.png" alt="">
                 </div>
-                <div class="gallery_img_container">
+                <div class="gallery_img_container" class="filterDiv video">
                     <img src="assets/gorillaz4.png" alt="">
                 </div>
-                <div class="gallery_img_container">
+                <div class="gallery_img_container" class="filterDiv image">
                     <img src="assets/gorillaz1.png" alt="">
                 </div>
-                <div class="gallery_img_container">
+                <div class="gallery_img_container" class="filterDiv video">
                     <img src="assets/gorillaz2.png" alt="">
                 </div>
             </div>
             <div class="small_padding" id="gallery_actions">
                 <div id="gallery_filter">
-                    <button>all</button>
-                    <button>audio</button>
-                    <button>image</button>
-                    <button>video</button>
+                    <button class="filter_button active" onclick="filterSelection('all')">all</button>
+                    <button class="filter_button" onclick="filterSelection('audio')">audio</button>
+                    <button class="filter_button" onclick="filterSelection('image')">image</button>
+                    <button class="filter_button" onclick="filterSelection('video')">video</button>
                 </div>
                 <button>load more</button>
             </div>
@@ -233,7 +233,7 @@
 
     // burger menu
     
-    var _burger_menu = document.querySelector("#burger_menu");
+    var _burger_menu = document.querySelector("#burger_menu")
     _burger_menu.addEventListener("click", function() {
         /* Toggle between adding and removing the "active" class,
         to highlight the button that controls the panel */
@@ -245,7 +245,7 @@
 
     // accordions
     
-    var _accordionsList = document.querySelectorAll(".accordion");
+    var _accordionsList = document.querySelectorAll(".accordion")
     _accordionsList.forEach(element => element.addEventListener("click", function() {
         /* Toggle between adding and removing the "active" class,
         to highlight the button that controls the panel */
@@ -253,7 +253,18 @@
 
         var _panel = this.nextElementSibling
         toggleDisplay(_panel)
+    }))
+
+    // gallery filter
+    var _gallery_filter_button = document.querySelectorAll(".filter_button")
+    var _gallery_filter_button_active = document.querySelector(".filter_button.active")
+    _gallery_filter_button.forEach(element => element.addEventListener("click", function() {
+        /* Toggle between adding and removing the "active" class,
+        to highlight the button that controls the panel */
+        this.classList.toggle("active")
+
     })
+    _gallery_filter_button_active.classList.toggle("active")
     )
     
     /* function to toggle between hiding and showing an element */
