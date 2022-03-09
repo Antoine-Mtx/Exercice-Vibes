@@ -206,6 +206,10 @@ nav>ul>li>a {
     overflow: hidden;
 }
 
+.panel.active {
+    display: block;
+}
+
 .accordion:before{
     content: '\002B'; /* Unicode character for "+" */
     font-size: 2em;
@@ -250,12 +254,16 @@ nav>ul>li>a {
 /* Add a light grey background on mouse-over */
 .filter_button:hover {
     color: gray;
-  }
+}
   
   /* Add a dark background to the active button */
 .filter_button.active {
     color: deeppink;
-  }
+}
+
+.hide {
+    display: none;
+}
 
 #gallery_actions>button {
     border-color: deeppink;

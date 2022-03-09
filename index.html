@@ -64,8 +64,7 @@
                 </div>
                 <div>
                     <div class="leaflet">
-                        <button class="accordion">nulla consequat massa</button>
-                        </button>
+                        <button class="accordion active">nulla consequat massa</button>
                         <div class="panel">
                             <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo</p>
                         </div>
@@ -87,37 +86,37 @@
         </section>
         <section id="portfolio">
             <div id="gallery">
-                <div class="gallery_img_container" class="filterDiv audio">
-                    <img src="assets/gorillaz1.png" alt="">
+                <div class="gallery_img_container toFilter" data-type="audio">
+                    <img src="assets/gorillaz1.png" alt="image gallerie">
                 </div>
-                <div class="gallery_img_container" class="filterDiv video">
-                    <img src="assets/gorillaz2.png" alt="">
+                <div class="gallery_img_container toFilter" data-type="video">
+                    <img src="assets/gorillaz2.png" alt="image gallerie">
                 </div>
-                <div class="gallery_img_container" class="filterDiv image">
-                    <img src="assets/gorillaz3.png" alt="">
+                <div class="gallery_img_container toFilter" data-type="image">
+                    <img src="assets/gorillaz3.png" alt="image gallerie">
                 </div>
-                <div class="gallery_img_container" class="filterDiv audio">
-                    <img src="assets/gorillaz4.png" alt="">
+                <div class="gallery_img_container toFilter" data-type="audio">
+                    <img src="assets/gorillaz4.png" alt="image gallerie">
                 </div>
-                <div class="gallery_img_container" class="filterDiv audio">
-                    <img src="assets/gorillaz3.png" alt="">
+                <div class="gallery_img_container toFilter" data-type="audio">
+                    <img src="assets/gorillaz3.png" alt="image gallerie">
                 </div>
-                <div class="gallery_img_container" class="filterDiv video">
-                    <img src="assets/gorillaz4.png" alt="">
+                <div class="gallery_img_container toFilter" data-type="video">
+                    <img src="assets/gorillaz4.png" alt="image gallerie">
                 </div>
-                <div class="gallery_img_container" class="filterDiv image">
-                    <img src="assets/gorillaz1.png" alt="">
+                <div class="gallery_img_container toFilter" data-type="image">
+                    <img src="assets/gorillaz1.png" alt="image gallerie">
                 </div>
-                <div class="gallery_img_container" class="filterDiv video">
-                    <img src="assets/gorillaz2.png" alt="">
+                <div class="gallery_img_container toFilter" data-type="video">
+                    <img src="assets/gorillaz2.png" alt="image gallerie">
                 </div>
             </div>
             <div class="small_padding" id="gallery_actions">
                 <div id="gallery_filter">
-                    <button class="filter_button active" onclick="filterSelection('all')">all</button>
-                    <button class="filter_button" onclick="filterSelection('audio')">audio</button>
-                    <button class="filter_button" onclick="filterSelection('image')">image</button>
-                    <button class="filter_button" onclick="filterSelection('video')">video</button>
+                    <button class="filter_button active" data-selection="all">all</button>
+                    <button class="filter_button" data-selection="audio">audio</button>
+                    <button class="filter_button" data-selection="image">image</button>
+                    <button class="filter_button" data-selection="video">video</button>
                 </div>
                 <button>load more</button>
             </div>
@@ -233,39 +232,49 @@
 
     // burger menu
     
-    var _burger_menu = document.querySelector("#burger_menu")
+    let _burger_menu = document.querySelector("#burger_menu")
     _burger_menu.addEventListener("click", function() {
-        /* Toggle between adding and removing the "active" class,
-        to highlight the button that controls the panel */
         this.classList.toggle("active")
 
-        var _nav = this.previousElementSibling
+    let _nav = this.previousElementSibling
         toggleDisplay(_nav)
     })
 
     // accordions
     
-    var _accordionsList = document.querySelectorAll(".accordion")
+    let _accordionsList = document.querySelectorAll(".accordion")
     _accordionsList.forEach(element => element.addEventListener("click", function() {
-        /* Toggle between adding and removing the "active" class,
-        to highlight the button that controls the panel */
+        let _accordion_active = document.querySelector(".accordion.active")
+        console.log(_accordion_active)
+        let _panelDeployed = _accordion_active.nextElementSibling
+        _accordion_active.classList.toggle("active")
+        toggleDisplay(_panelDeployed)
+        
         this.classList.toggle("active")
-
-        var _panel = this.nextElementSibling
+        let _panel = this.nextElementSibling
         toggleDisplay(_panel)
     }))
 
     // gallery filter
-    var _gallery_filter_button = document.querySelectorAll(".filter_button")
-    var _gallery_filter_button_active = document.querySelector(".filter_button.active")
-    _gallery_filter_button.forEach(element => element.addEventListener("click", function() {
-        /* Toggle between adding and removing the "active" class,
-        to highlight the button that controls the panel */
-        this.classList.toggle("active")
 
-    })
-    _gallery_filter_button_active.classList.toggle("active")
-    )
+    let _filter_button = document.querySelectorAll(".filter_button")
+    _filter_button.forEach(element => element.addEventListener("click", function() {
+        let _filter_button_active = document.querySelector(".filter_button.active")
+        _filter_button_active.classList.toggle("active")
+        this.classList.toggle("active")
+        filterSelection(this.dataset.selection)
+    }))
+
+    function filterSelection(dataType) {
+        let _toFilter = document.querySelectorAll(".toFilter")
+        _toFilter.forEach(element => {
+            if (dataType == "all" || element.dataset.type == dataType) {
+                element.classList.remove("hide")
+            } else {
+                element.classList.add("hide")
+            }
+        })
+    }
     
     /* function to toggle between hiding and showing an element */
     function toggleDisplay(element) {
