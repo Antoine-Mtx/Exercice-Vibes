@@ -40,25 +40,27 @@
                 </div>
                 <div>
                     <h2>what you get?</h2>
-                    <div class="icons_and_text_containers">
-                        <i class="icons fa-brands fa-wordpress"></i>
-                        <div>
-                            <h5>colorful & compact</h5>
-                            <p class="no_margin_top">portfolio wordpress theme</p>
+                    <div id="what_u_get">
+                        <div class="icons_and_text_containers">
+                            <i class="icons fa-brands fa-wordpress"></i>
+                            <div>
+                                <h5>colorful & compact</h5>
+                                <p class="no_margin_top">portfolio wordpress theme</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="icons_and_text_containers">
-                        <i class="icons fa-solid fa-gear"></i>
-                        <div>
-                            <h5>very easy to use</h5>
-                            <p class="no_margin_top">page builder & shortcodes</p>
+                        <div class="icons_and_text_containers">
+                            <i class="icons fa-solid fa-gear"></i>
+                            <div>
+                                <h5>very easy to use</h5>
+                                <p class="no_margin_top">page builder & shortcodes</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="icons_and_text_containers">
-                        <i class="icons fa-solid fa-paper-plane"></i>
-                        <div>
-                            <h5>coded with sass</h5>
-                            <p class="no_margin_top">create custom skins in minutes</p>
+                        <div class="icons_and_text_containers">
+                            <i class="icons fa-solid fa-paper-plane"></i>
+                            <div>
+                                <h5>coded with sass</h5>
+                                <p class="no_margin_top">create custom skins in minutes</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -66,19 +68,19 @@
                     <div class="leaflet">
                         <button class="accordion active">nulla consequat massa</button>
                         <div class="panel active">
-                            <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo</p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex perferendis qui rem vero adipisci ullam?</p>
                         </div>
                     </div>
                     <div class="leaflet">
                         <button class="accordion">vivamis elementum semper</button>
                         <div class="panel">   
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa dicta perferendis provident doloribus esse iure?</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa dicta perferendis provident doloribus?</p>
                         </div>
                     </div>
                     <div class="leaflet">
                         <button class="accordion">etiam ultricies nisi vel</button>
                         <div class="panel">     
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed delectus corporis libero nam dolorem numquam.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed delectus corporis libero dolorem numquam.</p>
                         </div>
                     </div>
                 </div>
@@ -86,30 +88,38 @@
         </section>
         <section id="portfolio">
             <div id="gallery">
-                <div class="gallery_img_container toFilter" data-type="audio">
+                <figure class="toFilter" data-type="audio">
                     <img src="assets/gorillaz1.png" alt="image gallerie">
-                </div>
-                <div class="gallery_img_container toFilter" data-type="video">
+                    <figcaption><i class="fa-solid fa-music"></i></figcaption>
+                </figure>
+                <figure class="toFilter" data-type="video">
                     <img src="assets/gorillaz2.png" alt="image gallerie">
-                </div>
-                <div class="gallery_img_container toFilter" data-type="image">
+                    <figcaption><i class="fa-solid fa-play"></i></figcaption>
+                </figure>
+                <figure class="toFilter" data-type="image">
                     <img src="assets/gorillaz3.png" alt="image gallerie">
-                </div>
-                <div class="gallery_img_container toFilter" data-type="audio">
+                    <figcaption><i class="fa-solid fa-image"></i></figcaption>
+                </figure>
+                <figure class="toFilter" data-type="audio">
                     <img src="assets/gorillaz4.png" alt="image gallerie">
-                </div>
-                <div class="gallery_img_container toFilter" data-type="audio">
+                    <figcaption><i class="fa-solid fa-music"></i></figcaption>
+                </figure>
+                <figure class="toFilter" data-type="audio">
                     <img src="assets/gorillaz3.png" alt="image gallerie">
-                </div>
-                <div class="gallery_img_container toFilter" data-type="video">
+                    <figcaption><i class="fa-solid fa-music"></i></figcaption>
+                </figure>
+                <figure class="toFilter" data-type="video">
                     <img src="assets/gorillaz4.png" alt="image gallerie">
-                </div>
-                <div class="gallery_img_container toFilter" data-type="image">
+                    <figcaption><i class="fa-solid fa-play"></i></figcaption>
+                </figure>
+                <figure class="toFilter" data-type="image">
                     <img src="assets/gorillaz1.png" alt="image gallerie">
-                </div>
-                <div class="gallery_img_container toFilter" data-type="video">
+                    <figcaption><i class="fa-solid fa-image"></i></figcaption>
+                </figure>
+                <figure class="toFilter" data-type="video">
                     <img src="assets/gorillaz2.png" alt="image gallerie">
-                </div>
+                    <figcaption><i class="fa-solid fa-play"></i></figcaption>
+                </figure>
             </div>
             <div class="small_padding" id="gallery_actions">
                 <div id="gallery_filter">
@@ -215,6 +225,7 @@
                 <div class="small_dash"></div>
                 <p>&#9724&#9724&#9724&#9724&#9632</p>
             </article>
+            <button id="angle_up"><i class="fa-solid fa-angle-up"></i></button>
         </section>
         <nav class="small_padding" id="footer_nav">
             <a>Buy this theme on ThemeForest.net</a>
@@ -246,8 +257,6 @@
     _accordionsList.forEach(element => element.addEventListener("click", function() {
         let _accordion_active = document.querySelector(".accordion.active")
 
-        console.log(_accordion_active)
-
         let _panelDeployed = _accordion_active.nextElementSibling
         _accordion_active.classList.toggle("active")
         _panelDeployed.classList.toggle("active")
@@ -256,7 +265,6 @@
         let _panel = this.nextElementSibling
         _panel.classList.toggle("active")
 
-        console.log(_accordion_active)
     }))
 
     // gallery filter
@@ -269,8 +277,19 @@
         filterSelection(this.dataset.selection)
     }))
 
+    let _toFilter = document.querySelectorAll(".toFilter")
+
+    _toFilter.forEach(element => element.addEventListener("mouseover", function(){
+        let _figcaption = element.lastElementChild
+        _figcaption.classList.toggle("active")
+
+        // on fait disparaître le figcaption après quelques instants
+        setTimeout(function() {
+            _figcaption.classList.toggle("active")
+        }, 1000)
+    }))
+
     function filterSelection(dataType) {
-        let _toFilter = document.querySelectorAll(".toFilter")
         _toFilter.forEach(element => {
             if (dataType == "all" || element.dataset.type == dataType) {
                 element.classList.remove("hide")
@@ -279,6 +298,14 @@
             }
         })
     }
+
+    // scrollback
+
+    let _angle_up = document.querySelector("#angle_up")
+    let myTop = document.querySelector("body")
+    _angle_up.addEventListener("click", function() {
+        myTop.scrollIntoView({behavior: "smooth", block: "start"})
+    })
     
     /* function to toggle between hiding and showing an element */
     function toggleDisplay(element) {
