@@ -58,22 +58,49 @@ function filterSelection(dataType) {
 
 // modal
 
-let _modal = document.querySelector("#modal")
+//using dialog
+
+let _dialog = document.querySelector("#dialog")
 
 _toFilter.forEach(element => element.addEventListener("click", function() {
-    if (_modal.classList.contains("active")) {
-        _modal.removeChild(_modal.firstElementChild)
+    _content = element.firstElementChild.cloneNode()
+    _dialog.appendChild(_content)
+    if (typeof _dialog.showModal === "function") {
+        _dialog.showModal()
     } else {
-        _content = element.firstElementChild.cloneNode()
-        _modal.appendChild(_content)
+        console.error("L'API <dialog> n'est pas prise en charge par ce navigateur.");
     }
-    _modal.classList.toggle("active")
 }))
 
-_modal.addEventListener("click", function() {
-        _modal.removeChild(_modal.firstElementChild)
-        _modal.classList.toggle("active")
+_dialog.addEventListener("click", function() {
+    _dialog.removeChild(_dialog.firstElementChild)
+    _dialog.close()
 })
+
+//without using dialog
+
+// let _modal = document.querySelector("#modal")
+
+// _toFilter.forEach(element => element.addEventListener("click", function() {
+//     if (_modal.classList.contains("active")) {
+//         _modal.removeChild(_modal.firstElementChild)
+//     } else {
+//         _content = element.firstElementChild.cloneNode()
+//         _modal.appendChild(_content)
+//         if (typeof _modal.showModal === "function") {
+//             _modal.showModal()
+//           } else {
+//             console.error("L'API <dialog> n'est pas prise en charge par ce navigateur.");
+//           }
+//     }
+//     _modal.classList.toggle("active")
+// }))
+
+// _modal.addEventListener("click", function() {
+//     _modal.close()
+//     _modal.removeChild(_modal.firstElementChild)
+//     _modal.classList.toggle("active")
+// })
 
 // scrollback
 
