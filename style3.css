@@ -88,7 +88,7 @@ h5 {
 
 #logo:hover {
     cursor: pointer;
-    filter: drop-shadow(30px 30px 30px white);
+    filter: drop-shadow(0 0 10px white);
 }
 
 nav>ul{
@@ -240,6 +240,25 @@ nav>ul>li>i {
 }
 
 /* ------------------------ */
+
+#modal {
+    max-width: 800px;
+    width: 60%;
+    aspect-ratio: 4 / 3;
+    margin: auto;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: grey;
+    border: 1px solid black;
+    z-index: 2;
+}
+
+#modal.active {
+    display:block;
+}
 
 #gallery {
     display: grid;
@@ -575,6 +594,10 @@ article form button {
 
     #what_u_get {
         flex-direction: column;
+    }
+
+    #modal {
+        width: 100%;
     }
 
     #gallery {

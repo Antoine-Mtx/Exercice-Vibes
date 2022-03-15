@@ -56,6 +56,25 @@ function filterSelection(dataType) {
     })
 }
 
+// modal
+
+let _modal = document.querySelector("#modal")
+
+_toFilter.forEach(element => element.addEventListener("click", function() {
+    if (_modal.classList.contains("active")) {
+        _modal.removeChild(_modal.firstElementChild)
+    } else {
+        _content = element.firstElementChild.cloneNode()
+        _modal.appendChild(_content)
+    }
+    _modal.classList.toggle("active")
+}))
+
+_modal.addEventListener("click", function() {
+        _modal.removeChild(_modal.firstElementChild)
+        _modal.classList.toggle("active")
+})
+
 // scrollback
 
 let _angle_up = document.querySelector("#angle_up")
