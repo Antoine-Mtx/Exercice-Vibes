@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link id= "page-style" rel="stylesheet" href="style1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="script.js" defer></script>
     <title>Vibes</title>
 </head>
 <body>
@@ -172,7 +173,7 @@
         <section class="small_padding" id="contact">
             <header class="section_header">
                 <h1>get in touch</h1>
-                <div class="dash"></div>
+                <div class="dash pink"></div>
             </header>
             <form action="submit">
                 <div class="form_column">
@@ -238,82 +239,3 @@
     </footer>
 </body>
 </html>
-
-<script>
-
-    // burger menu
-    
-    let _burger_menu = document.querySelector("#burger_menu")
-    _burger_menu.addEventListener("click", function() {
-        this.classList.toggle("active")
-
-    let _nav = this.previousElementSibling
-        toggleDisplay(_nav)
-    })
-
-    // accordions
-    
-    let _accordionsList = document.querySelectorAll(".accordion")
-    _accordionsList.forEach(element => element.addEventListener("click", function() {
-        let _accordion_active = document.querySelector(".accordion.active")
-
-        let _panelDeployed = _accordion_active.nextElementSibling
-        _accordion_active.classList.toggle("active")
-        _panelDeployed.classList.toggle("active")
-        
-        this.classList.toggle("active")
-        let _panel = this.nextElementSibling
-        _panel.classList.toggle("active")
-
-    }))
-
-    // gallery filter
-
-    let _filter_button = document.querySelectorAll(".filter_button")
-    _filter_button.forEach(element => element.addEventListener("click", function() {
-        let _filter_button_active = document.querySelector(".filter_button.active")
-        _filter_button_active.classList.toggle("active")
-        this.classList.toggle("active")
-        filterSelection(this.dataset.selection)
-    }))
-
-    let _toFilter = document.querySelectorAll(".toFilter")
-
-    _toFilter.forEach(element => element.addEventListener("mouseover", function(){
-        let _figcaption = element.lastElementChild
-        _figcaption.classList.toggle("active")
-
-        // on fait disparaître le figcaption après quelques instants
-        setTimeout(function() {
-            _figcaption.classList.toggle("active")
-        }, 1000)
-    }))
-
-    function filterSelection(dataType) {
-        _toFilter.forEach(element => {
-            if (dataType == "all" || element.dataset.type == dataType) {
-                element.classList.remove("hide")
-            } else {
-                element.classList.add("hide")
-            }
-        })
-    }
-
-    // scrollback
-
-    let _angle_up = document.querySelector("#angle_up")
-    let myTop = document.querySelector("body")
-    _angle_up.addEventListener("click", function() {
-        myTop.scrollIntoView({behavior: "smooth", block: "start"})
-    })
-    
-    /* function to toggle between hiding and showing an element */
-    function toggleDisplay(element) {
-        if (element.style.display === "block") {
-            element.style.display = "none"
-        } else {
-            element.style.display = "block"
-        }
-    }
-
-</script>
